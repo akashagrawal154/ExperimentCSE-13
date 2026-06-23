@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Counter Application</title>
+
+    <!-- React CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container{
+            background: white;
+            width: 350px;
+            margin: 100px auto;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .counter{
+            font-size: 40px;
+            margin: 20px 0;
+        }
+
+        .buttons button{
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover{
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function App() {
+
+            const [count, setCount] = React.useState(0);
+
+            const increment = () => {
+                setCount(count + 1);
+            };
+
+            const decrement = () => {
+                setCount(count - 1);
+            };
+
+            const reset = () => {
+                setCount(0);
+            };
+
+            return (
+                <div className="container">
+                    <h1>React Counter Application</h1>
+
+                    <h2 className="counter">{count}</h2>
+
+                    <div className="buttons">
+                        <button onClick={increment}>
+                            Increment (+)
+                        </button>
+
+                        <button onClick={decrement}>
+                            Decrement (-)
+                        </button>
+
+                        <button onClick={reset}>
+                            Reset
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(
+            document.getElementById("root")
+        );
+
+        root.render(<App />);
+
+    </script>
+
+</body>
+</html>
