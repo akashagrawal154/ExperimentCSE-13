@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation and Event Handling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Welcome Page</h2>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <br>
+
+        <button onclick="showMessage()">Show Greeting</button>
+        <button onclick="changeColor()">Change Color</button>
+        <button onclick="clearData()">Clear</button>
+
+        <p id="message">Your message will appear here.</p>
+    </div>
+
+    <script>
+
+        function showMessage() {
+            let userName = document.getElementById("name").value;
+
+            if(userName === "") {
+                document.getElementById("message").innerHTML =
+                    "Please enter your name!";
+            }
+            else {
+                document.getElementById("message").innerHTML =
+                    "Hello, " + userName + "! Welcome.";
+            }
+        }
+
+        function changeColor() {
+            document.getElementById("message").style.color = "green";
+        }
+
+        function clearData() {
+            document.getElementById("name").value = "";
+            document.getElementById("message").innerHTML =
+                "Your message will appear here.";
+            document.getElementById("message").style.color = "blue";
+        }
+
+    </script>
+
+</body>
+</html>
