@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Calculator</title>
+</head>
+<body>
+
+    <h2>Student Result Calculator</h2>
+    <button onclick="calculateResult()">Calculate Result</button>
+
+    <p id="output"></p>
+
+    <script>
+        function calculateResult() {
+
+            let total = 0;
+            let subjects = 5;
+
+            // Input marks using loop
+            for (let i = 1; i <= subjects; i++) {
+                let marks = parseFloat(
+                    prompt("Enter marks for Subject " + i)
+                );
+
+                total += marks;
+            }
+
+            let percentage = total / subjects;
+            let grade;
+
+            // Conditions for Grade
+            if (percentage >= 90) {
+                grade = "A+";
+            }
+            else if (percentage >= 80) {
+                grade = "A";
+            }
+            else if (percentage >= 70) {
+                grade = "B";
+            }
+            else if (percentage >= 60) {
+                grade = "C";
+            }
+            else if (percentage >= 50) {
+                grade = "D";
+            }
+            else {
+                grade = "F";
+            }
+
+            let result = (percentage >= 40) ? "PASS" : "FAIL";
+
+            document.getElementById("output").innerHTML =
+                "<b>Total Marks:</b> " + total + "/500<br>" +
+                "<b>Percentage:</b> " + percentage.toFixed(2) + "%<br>" +
+                "<b>Grade:</b> " + grade + "<br>" +
+                "<b>Result:</b> " + result;
+        }
+    </script>
+
+</body>
+</html>
