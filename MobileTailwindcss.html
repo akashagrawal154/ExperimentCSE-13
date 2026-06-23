@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Responsive Design</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4 text-center">
+        <h1 class="text-2xl font-bold">Mobile-First Responsive Webpage</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white">
+        <ul class="flex flex-col md:flex-row justify-center">
+            <li><a href="#" class="block px-6 py-3 hover:bg-gray-700">Home</a></li>
+            <li><a href="#" class="block px-6 py-3 hover:bg-gray-700">About</a></li>
+            <li><a href="#" class="block px-6 py-3 hover:bg-gray-700">Services</a></li>
+            <li><a href="#" class="block px-6 py-3 hover:bg-gray-700">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">
+                    Card 1
+                </h2>
+                <p class="text-gray-700">
+                    This card demonstrates Tailwind CSS spacing,
+                    typography, and color utilities.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold text-green-600 mb-2">
+                    Card 2
+                </h2>
+                <p class="text-gray-700">
+                    Responsive layouts are created using Tailwind's
+                    breakpoint classes.
+                </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold text-red-600 mb-2">
+                    Card 3
+                </h2>
+                <p class="text-gray-700">
+                    The layout adapts automatically for mobile,
+                    tablet, and desktop screens.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-4 mt-6">
+        <p>&copy; 2026 Tailwind CSS Responsive Design</p>
+    </footer>
+
+</body>
+</html>
