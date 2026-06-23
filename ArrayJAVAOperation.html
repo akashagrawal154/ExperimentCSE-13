@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management</title>
+</head>
+<body>
+
+    <h2>Employee Records</h2>
+    <button onclick="showEmployees()">Display Records</button>
+    <button onclick="filterEmployees()">Salary > 50000</button>
+    <button onclick="salaryStatistics()">Salary Statistics</button>
+
+    <div id="output"></div>
+
+    <script>
+
+        // Array of Employee Objects
+        let employees = [
+            {id: 101, name: "Akash", department: "IT", salary: 55000},
+            {id: 102, name: "Rahul", department: "HR", salary: 45000},
+            {id: 103, name: "Priya", department: "Finance", salary: 65000},
+            {id: 104, name: "Neha", department: "Marketing", salary: 50000},
+            {id: 105, name: "Amit", department: "IT", salary: 70000}
+        ];
+
+        // Display All Employees
+        function showEmployees() {
+            let result = "<h3>Employee Records</h3>";
+
+            employees.forEach(emp => {
+                result +=
+                    "ID: " + emp.id +
+                    ", Name: " + emp.name +
+                    ", Department: " + emp.department +
+                    ", Salary: ₹" + emp.salary + "<br>";
+            });
+
+            document.getElementById("output").innerHTML = result;
+        }
+
+        // Filter Employees with Salary > 50000
+        function filterEmployees() {
+
+            let filtered = employees.filter(emp => emp.salary > 50000);
+
+            let result = "<h3>Employees with Salary > ₹50000</h3>";
+
+            filtered.forEach(emp => {
+                result +=
+                    emp.name + " - ₹" + emp.salary + "<br>";
+            });
+
+            document.getElementById("output").innerHTML = result;
+        }
+
+        // Salary Statistics
+        function salaryStatistics() {
+
+            let salaries = employees.map(emp => emp.salary);
+
+            let total = salaries.reduce((sum, salary) =>
+                sum + salary, 0);
+
+            let average = total / employees.length;
+
+            let highest = Math.max(...salaries);
+            let lowest = Math.min(...salaries);
+
+            document.getElementById("output").innerHTML =
+                "<h3>Salary Statistics</h3>" +
+                "Total Salary: ₹" + total + "<br>" +
+                "Average Salary: ₹" + average.toFixed(2) + "<br>" +
+                "Highest Salary: ₹" + highest + "<br>" +
+                "Lowest Salary: ₹" + lowest;
+        }
+
+    </script>
+
+</body>
+</html>
